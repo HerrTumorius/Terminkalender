@@ -1,0 +1,206 @@
+Pflichtenheft-Gruppenterminkalender
+
+1.	Zielbestimmung
+1.1.	Muss Kriterien
+•	man kann einen Termin angeben an dem man Zeit hat
+•	man muss neue Passwort gesicherte Benutzer erstellen können
+•	Benutzer müssen sich anmelden können
+•	Benutzer müssen einer Gruppe zugeordnet werden können
+•	Perfekte Termine  für alle Gruppenmitglieder einsehbar
+•	eine Funktion zum Finden des perfekten Termins
+•	Gruppen erstellen (Gruppenname und Mitglieder)
+•	Homebutton in jedem Fenster
+•	Zwischen verschiedenen Monaten im Kalender wechseln können
+•	Nutzer bekommt Feedback vom Programm bei Fehlerhaften Eingaben
+1.2.	Wunschkriterien
+•	Button mit dem man sich schon vorgeschlagenen Terminen anschließen kann
+•	Fast perfekte Termine  für alle Gruppenmitglieder einsehbar
+•	Überlappende Termine die man einträgt müssen von anderen Gruppenmitgliedern eingesehen werden können
+•	es muss gesagt werden können, welcher Termin der beliebteste/beste ist, wenn verschiedene Termine eingetragen sind
+•	eine Kalender Ansicht die für jeden Nutzer dieser Gruppe zeigt, wann die anderen Nutzer Zeit haben
+•	eine Funktion, dass wenn von der Website ein perfekter Termin ausgesucht wurde dieser von den Nutzern nochmal bestätigt oder abgesagt werden kann
+•	Gruppenmitglieder verwalten
+•	Erinnerungsfunktion für den Termin (Zeitlich einstellbar)
+•	man kann einen Termin angeben an dem man keiner Zeit hat
+•	Kommentar zum gegebenen Termin schreiben
+•	Möglichkeit der Meldung von Fehlern
+•	Wiederverwendbarkeit von bereits angegebenen Terminen
+•	darkmode
+•	Benutzer suchen Funktion
+•	Einstellbarkeit von privaten und öffentlichen Gruppen
+•	Hinzufügen und entfernen von Benutzern und Gruppen
+•	Gruppensuche Funktion über diese einschreiben in öffentliche Gruppen und auch wieder ausschreiben
+•	Benutzer müssen sich aus jeder Gruppe ausschreiben können / nicht selber einschreiben (wenn man nicht Admin ist) 
+•	Administratoren-Rechte in der Gruppe vergebbar
+•	Anzeigen der angegebenen Termine eines Benutzers im Kalender
+•	Termine von verschiedenen Personen müssen in einem Kalender angezeigt werden können
+•	Über Suchfunktion zu bestimmten Terminen im Kalender springen
+•	Angegebene Termine können gelöscht werden
+•	Angegebene Termine können verschoben werden
+1.3.	Abgrenzungskriterien
+•	kein Kalender für private Termine einträgt
+•	läuft nur als Website im Browser
+
+
+2.	Produkt - Einsatz
+2.1.	Anwendungsbereiche
+•	Termine planen unter Arbeitskollegen, Freunden oder Verwandten
+•	Organisieren von Partys, Familien- und Firmenfeiern, etc.
+•	Qualifikationsniveaus des Benutzers: für den Otto Normalverbraucher
+o	Einfache, intuitive Handhabung der Software
+2.2.	Zielgruppe
+•	eher jüngere Personen
+•	Technik interessierte, strukturierte und engagierte Personen
+•	Personen die schnell und einfach Termine festlegen wollen (keine Briefe verschicken oder ewiges rum-telefonieren)
+•	Personen die offen für neue Möglichkeiten sind
+2.3.	Betriebsbedingungen
+•	System läuft rund um die Uhr (24h)
+•	Das System kann unbeaufsichtigt arbeiten, sollte aber in regelmäßigen Abständen gewartet und auf Fehler kontrolliert werden.
+
+3.	Produkt - Umgebung
+3.1.	Software
+•	Aktuellste Version des Betriebssystems:
+Windows 7-10
+•	Aktuellste Version eines HTML-kompatiblen Browsers wie z.B.:
+Google Chrome, Mozilla Firefox oder MS Edge
+•	Internetverbindung
+•	Apache Server mit Python Mod
+•	Python 3.7.8 mit installiertem websockets Modul
+3.2.	Hardware
+•	keine wirkliche Hardware Auslastung
+•	z.B. Minimum: 
+o	Intel Pentium
+o	Netzwerkkarte
+o	0,5 GB RAM
+o	480p Bildschirm
+o	0,5 GB freier Speicher
+o	Tastatur
+•	z.B. Maximum: 
+o	Intel i - 3 (10300)
+o	Netzwerkkarte
+o	4 GB RAM
+o	Full-HD Bildschirm
+o	GeForce GTX 960
+o	0,5 GB freier Speicher
+o	Maus
+o	Tastatur
+3.3.	Orgware
+•	Benutzerhandbuch (Digital)
+•	Internetzugang, damit die Daten zur Datenbank gelangen können
+•	Hosten einer Domainadresse, Datenbank
+3.4.	Produkt - Schnittstellen
+•	Datenbank – Python
+•	Python - HTML
+•	HTML - CSS
+•	HTML - JavaScript
+
+4.	Produkt-Funktionen
+F10P: Termine an denen Benutzer Zeit haben eintragen/anzeigen/speichern
+F14P: Gruppe erstellen
+F15P: passwortgesicherte Benutzer erstellen (Benutzername, Passwort)
+F16P: Anmeldefunktion für Benutzer
+F17P: Zuordnen von Benutzern zu einer Gruppe
+F18P: Kalendermonat wechseln
+F20P: Termine von verschiedenen Personen in einem Kalender einsehen
+F30P: Termineinträge müssen von anderen gesehen werden können
+F40P: Funktion zum Finden des perfekten Termins
+F41P: Die perfekten Termine einsehen
+F43P: Homebutton-Funktion
+F44W: fast perfekten Termine einsehen
+F45W: Anzahl der Benutzer mit angegebenem Termin an einem Termin ausgeben
+F46W: Termin löschen
+F47W: Termin verschieben
+F50W: Benutzer sich vorgeschlagenen Terminen anschließen
+F51W: Termin angeben, an dem Benutzer keine Zeit hat
+F52W: Zeitspanne an Terminen angeben, an denen ein Benutzer keine Zeit hat
+F53W: Zeitspanne an Terminen angeben, an denen ein Benutzer Zeit hat
+F55W: Ausgabe jeglicher Informationen über angegebene Termine aller Benutzer der Gruppe
+F56W: Kommentare zu einem Termin verfassen
+F57W: Bestätigung/Ablehnung von vorgeschlagenen Terminen
+F58W: Gruppe verwalten (Teilnehmer und Gruppenname)
+F59W: Gruppe verwalten (öffentlich/privat)
+F60W: Funktion, dass der “perfekte Termin” von den Benutzern der Gruppe abgesagt oder bestätigt werden kann
+F61W: Benutzer suchen
+F62W: Gruppen suchen
+F63W: Als Benutzer einschreiben in öffentliche Gruppen
+F64W: Als Benutzer ausschreiben aus jeglichen Gruppen
+F65W: Abstimmung zwischen mehreren perfekten Terminen
+F66W: Gruppen entfernen
+F67W: Benutzer entfernen
+F68W: Verwaltungsrechte in privaten Gruppen vergebbar
+F69W: Als Verwalter einer privaten Gruppe andere Benutzer einladen
+F70W: Erinnerungsfunktion für den Termin (zeitlich einstellbar)
+F71W: Einladen von Benutzern in öffentliche Gruppen
+F80W: Anmelden von einem Benutzer mit sicherem Passwort
+F90W: Meldung von Fehlern
+F95W: Ausgabe der angegebenen Termine eines Benutzers
+F96W: Zu bestimmten Terminen im Kalender springen
+F97W: Termine suchen
+F100W: Speichern und Laden von Terminkonstellationen 
+F110W: Umstellen der Farbpalette (zu bspw. darkmode)
+
+5.	Produkt - Daten
+D10: Grundgerüst der HTML-site
+D20: Grundgerüst der Datenbank
+D30: Inhalte der Datenbank (Termine, Mitglieder, Passwörter, ...)
+D40: Skript (CSS, JavaScript, Python, SQL)
+
+6.	Produkt - Leistungen
+L10: nach 10 Sekunden ist ein Termin nach Eintrag für alle Sichtbar
+L20: Innerhalb von 5 Sekunden kann ein Perfekter Termin ausgegeben werden
+L30: Termine können auf den Tag genau angegeben werden
+
+7.	Benutzeroberfläche:
+B10P: Ansprechendes Layout mit moderner Gestaltung
+B20P: Buttons zum an- und abmelden von Benutzern, Benutzer erstellen und Gruppen erstellen
+B25P: Homebutton
+B30P: Anzeige in Kalenderform, in der Termine und Benutzer zu sehen sind
+B40W: Wenn man auf den Termin klickt: Angabe von Termin und Benutzern, welche diesen Termin angegeben haben
+B50W: Button durch den man einen Termin absagen oder Bestätigen kann
+B60W: Auffällige Einblendung für Termin Erinnerung
+
+8.	Qualitäts-/Zielbestimmungen
+•	Das Produkt soll einen allgemein sehr wertigen Eindruck machen
+•	Fehlerfreie und schnelle Funktionalität
+•	Intuitivität der Bedienung
+
+9.	Globale Testszenarien/Testfälle
+•	Lokale Ausführungen der Software
+•	Testweißes Ausführen durch Zugriff über das WWW
+
+10.	Entwicklungs – Umgebung
+10.1.	Software
+•	Windows 10 Home
+•	sqlite3
+•	Notepad++ als Editor
+•	MS Word(Remo)
+•	Visual Studio 2019
+•	Paint 3D
+•	Python IDLE 3.7
+•	Dia
+•	Adobe Acrobat Reader DC
+10.2.	Hardware
+•	Hardware Konfiguration Lukas:
+•	Intel i - 7 8700
+•	16 GB RAM
+•	GeForce 1070ti
+•	Surface 4 pro
+•	Bildungsrechner Berlin vom Wilhelm von Siemens Gymnasium Stand: 03.2021
+10.3.	Orgware
+•	W3schools.com
+•	www.tutorialspoint.com/python_data_access/
+•	realpython.com/python-sockets 
+•	www.mrknowing.com/2013/07/25/eigenen-html-kalender-erstellen-html-und-javascript/
+•	pypi.org/project/websocket-client/
+•	websockets.readthedocs.io/en/stable/intro.html
+10.4.	Entwicklungs – Schnittstellen
+•	Remotedesktopverbindung
+•	sqlite3 Python Modul
+
+
+
+11.	Ergänzungen
+11.1.	Definitionen
+•	Termin: Tag. Monat. Jahr
+•	Perfekter Termin: Termin, an dem alle Benutzer einer Gruppe angaben Zeit zu haben.
+•	Fast perfekter Termin: Termin an dem mehr als einer und weniger als alle Benutzer einer Gruppe angaben Zeit zu haben.
