@@ -1,5 +1,5 @@
 # Terminkalender
-Abschlussprojekt 12. Klasse Informatik Leistungskurs am Wilhelm von Siemens Gymnasium Jahrgang 2020/2021. Terminkalender zum organisieren von Treffen zwischen verschiedenen Gruppen.
+Abschlussprojekt 12. Klasse Informatik Leistungskurs Jahrgang 2020/2021. Terminkalender zum organisieren von Treffen zwischen verschiedenen Gruppen.
 
 Bedingung des Kalenders.
 In der Mitte Ihres Fensters können sie einen Kalender erkennen. Indem Sie oben link oder oben Recht auf die Pfeile des Kalenders klicken können Sie einen Monat nach vorne oder einen Monat nach hinten Springen. In welchem Monat und Jahr Sie sich gerade befinden können sie oben in der Mitte des Kalenders ablesen. Unter dieser Zeile gibt es eine Zeile, wo die Wochentage abgekürzt aufgeschrieben sind. Wenn Sie diese Spalten nach unter verfolgen können Sie ablesen, welches genaue Datum der Wochentag hat. Der aktuelle Wochen Tag ist gelb hinterlegt. Wenn Sie mit der Maus über einer bestimmten Zahl (Datum) sind erscheint ihnen ein Fenster. In diesem Fenster können Sie Informationen zu dem Termin angeben. Schreiben Sie dazu Ihre Information in das Feld indem grau “Informationen” steht und klicken sie auf den Butten mit der Bezeichnung “Abschicken”.
