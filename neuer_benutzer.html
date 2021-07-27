@@ -1,0 +1,92 @@
+<html>
+         <head>
+                 <link rel="stylesheet" href="style.css"/>
+                 <script>
+                     var websocket = new WebSocket("ws://127.0.0.1:6789/"),
+                         name = document.querySelector('.name'),
+                     abmelden = document.querySelector('.abmelden');
+                     websocket.onmessage = function (event) {
+                         data = JSON.parse(event.data);
+                         console.log("html");
+                         switch (data.type) {
+                             case 'neuerBenutzer':
+                                 console.log("htmlvalue:", data.value);
+                                 alert(data.value);
+                                 break;
+                             default:
+                                 console.error(
+                                     "unsupported event",
+                                     data);
+                         }
+                     };
+                     function klickt(event) {
+                         name.textContent = "nicht angemeldet";
+                     }
+                     function kontrolle() {
+                         console.log("kontrolle");
+                           var x = document.forms["myform"]["fname"].value;
+                           var y = document.forms["myform"]["fpsw"].value;
+                           if (x == "" || x == null || y == "" || y == null) {
+                             alert("Felder müssen ausgefüllt sein!!");
+                             return false;
+                           }
+                          }
+                     function pwkon() {
+                         console.log("pwkon");
+                          var y = document.forms["myform"]["fpsw"].value;
+                          var p = document.forms["myform"]["fpsww"].value;
+                          if (y == p){
+                            return true;   }
+                          else {
+                            alert("Passwort stimmt nicht überein!");
+                            return false;
+                           }
+                          }
+                        function nanzeige(){
+                          document.getElementById("aname").style.display = "block";
+                        }
+                        function nclose(){
+                          document.getElementById("aname").style.display = "none";
+                        }
+                        function ganzeige(){
+                          document.getElementById("gruppe").style.display = "block";
+                        }
+                        function gclose(){
+                          document.getElementById("gruppe").style.display = "none";
+                     }
+                     function klick() {
+                         console.log("benutzer");
+                         websocket.send(JSON.stringify({ action: 'neuerBenutzer', inhalt: [document.forms["myform"]["fname"].value, document.forms["myform"]["fpsw"].value] }));
+                     }
+                 </script>
+         </head>
+         <body>
+                  <div class="topnav">
+                    <a class="active" href="index.html">Home</a>
+                     <button class="agruppe" onclick="ganzeige()">Gruppen</button>
+                          <div class="gpopup" id="gruppe">
+                            <form  class="gcontainer" method="post">
+                            <button type="text" class="gruppe">Gruppenname</button>
+                            <button type="button" onclick="document.location ='neue_gruppe.html'" class="ngruppe">Neue Gruppe</button>
+                            <button type="button" onclick="gclose()" class="gclose">Close</button>
+                            </form>
+                          </div>
+
+                    <button class="name" onclick="nanzeige()">nicht angemeldet</button>
+                    <div class="popup" id="aname">
+                     <form  class="container" method="post">
+                     <button type= "submit" onsubmit="klickt()" class="abmelden">Abmelden</button>
+
+                     <button type="button" onclick="nclose()" class="close">Close</button>
+                    </form>
+                   </div>
+                 </div>
+                 <form name="myform" onsubmit="pwkon() , kontrolle() , klick()" method="post" class="form-container" required>
+                   <b> Name </b> <input type="text" name="fname" placeholder="Name" class="fett">
+                   <b> Passwort </b> <input type="text" name="fpsw" placeholder="Passwort">
+                   <b> Passwort wdh </b> <input type="text" name="fpsww" placeholder="Passwort wdh">
+                   <input type="submit" value="Neuen Benutzer erstellen" class="btn neu" name="benutzer">
+                 </form>
+
+         </body>
+</html>

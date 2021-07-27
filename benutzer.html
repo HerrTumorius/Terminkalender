@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>WebSocket demo</title>
+    <link rel="stylesheet" href="style.css" />
+    <style type="text/css">
+
+        .buttons {
+            font-size: 4em;
+            display: flex;
+            justify-content: center;
+        }
+
+        .button, .value {
+            line-height: 1;
+            padding: 2rem;
+            margin: 2rem;
+            border: medium solid;
+            min-height: 1em;
+            min-width: 1em;
+        }
+
+        .button {
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .minus {
+            color: red;
+        }
+
+        .plus {
+            color: green;
+        }
+
+        .value {
+            min-width: 2em;
+        }
+
+        .state {
+            font-size: 2em;
+        }
+    </style>
+    <script>
+        var websocket = new WebSocket("ws://127.0.0.1:6789/");
+        console.log("html");
+        websocket.onmessage = function(event) {
+            data = JSON.parse(event.data);
+            console.log("htmldata:", data);
+            switch (data.type) {
+            case 'state':
+                console.log("htmltype:", data.type);
+                value.textContent = data.value;
+                break;
+            case 'neuerBenutzer':
+                console.log("htmlvalue:", data.value);
+                alert(data.value);
+                break;
+            case 'users':
+                users.textContent = (
+                    data.count.toString() +
+                        " user" +
+                        (data.count == 1 ? "" : "s"));
+                break;
+            default:
+                console.error(
+                    "unsupported event",
+                    data);
+            }
+        };
+    </script>
+</head>
+<body>
+<form name="myform" onsubmit="pwkon() , klick() , kontrolle()" method="post" class="form-container" required>
+    <b> Name </b> <input type="text" name="fname" placeholder="Name" class="fett">
+    <b> Passwort </b> <input type="text" name="fpsw" placeholder="Passwort">
+    <b> Passwort wdh </b> <input type="text" name="fpsww" placeholder="Passwort wdh">
+    <input type="submit" value="Neuen Benutzer erstellen" class="btn neu">
+</form>
+<div class="buttons">
+    <div class="minus button">-</div>
+    <div class="value">?</div>
+    <div class="plus button">+</div>
+</div>
+<div class="state">
+    <span class="users">?</span> online
+</div>
+<script>
+    var minus = document.querySelector('.minus'),
+        plus = document.querySelector('.plus'),
+        value = document.querySelector('.value'),
+        users = document.querySelector('.users'),
+        submit = document.querySelector('.btn neu');
+        minus.onclick = function(event) {
+        websocket.send(JSON.stringify({ action: 'minus' }));
+    }
+    plus.onclick = function(event) {
+        websocket.send(JSON.stringify({ action: 'plus' }));
+    }
+    function klick() {
+        console.log("benutzer");
+        websocket.send(JSON.stringify({ action: 'neuerBenutzer', inhalt: [document.forms["myform"]["fname"].value, document.forms["myform"]["fpsw"].value] }));
+    }
+
+
+    function kontrolle() {
+        console.log("kontrolle");
+        var x = document.forms["myform"]["fname"].value;
+        var y = document.forms["myform"]["fpsw"].value;
+        if (x == "" || x == null || y == "" || y == null) {
+            alert("Felder müssen ausgefüllt sein!!");
+            return false;
+        }
+    }
+
+    function pwkon() {
+        var y = document.forms["myform"]["fpsw"].value;
+        var p = document.forms["myform"]["fpsww"].value;
+        if (y == p) {
+            
+            return true;
+        } else {
+            alert("Passwort stimmt nicht überein!");
+            return false;
+        }
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,83 @@
+<html>
+ <head>
+                 <link rel="stylesheet" href="style.css"/>
+                 <script>
+                     function kontrolle() {
+                           console.log("kontrolle");
+                           var x = document.forms["gruppe"]["gname"].value;
+                           var y = document.forms["gruppe"]["gmitglied"].value;
+                           if (x == "" || x == null || y == "" || y == null) {
+                             alert("Felder muessen ausgefuellt sein!!");
+                             return false;
+                           }
+                          }
+                        function nanzeige(){
+                          document.getElementById("aname").style.display = "block";
+                        }
+                        function nclose(){
+                          document.getElementById("aname").style.display = "none";
+                        }
+                        function ganzeige(){
+                          document.getElementById("gruppe").style.display = "block";
+                        }
+                        function gclose(){
+                          document.getElementById("gruppe").style.display = "none";
+                     }
+                     var websocket = new WebSocket("ws://127.0.0.1:6789/"),
+                     name = document.querySelector(".name"),
+                     grupp = document.querySelector(".gruppe");
+
+                     websocket.onmessage = function (event) {
+                         data = JSON.parse(event.data);
+                         console.log("htmldata:", data);
+                         switch (data.type) {
+                             case 'gruppe':
+                                 if (data.value.search("Gruppe existiert bereits") || data.value.search("Benutzername") && data.value.search("existiert nicht")) {
+                                     gruppe.textContent = document.forms["gruppe"]["gname"].value;
+                                     alert(data.value);
+                                 } else {
+                                     alert("Gruppe erfolgreich erstellt");
+                                 }
+                             default:
+                                 console.error(
+                                     "unsupported event",
+                                     data);
+                         }
+                     }
+                     function klick(event) {
+                         document.getElementById('name').value = "nicht angemeldet";
+                     }
+                     function klickt(event) {
+                         console.log("gruppesend");
+                         websocket.send(JSON.stringify({ action: 'gruppe', inhalt: [document.forms["gruppe"]["gname"].value, document.forms["gruppe"]["gmitglied"].value] }));
+                     }
+                 </script>
+ </head>
+ <body>
+                  <div class="topnav">
+                    <a class="active" href="index.html">Home</a>
+                     <button class="agruppe">Gruppen</button>
+                          <div class="gpopup" id="gruppe">
+                            <form  class="gcontainer" method="post">
+                            <button type="button" class="gruppe">Gruppe einrichten</button>
+                            <button type="button" onclick="document.location ='neue_gruppe.html'" class="ngruppe">Neue Gruppe</button>
+                            <button type="button" onclick="gclose()" class="gclose">Close</button>
+                            </form>
+                          </div>
+
+                   <button class="name" onclick="nanzeige()">nicht angemeldet</button>
+                    <div class="popup" id="aname">
+                     <form  class="container" method="post">
+                     <button type= "submit" onsubmit="klick()" class="abmelden">Abmelden</button>
+
+                     <button type="button" onclick="nclose()" class="close">Close</button>
+                    </form>
+                   </div>
+                 </div>
+                 <form name="gruppe" method="post" onsubmit="kontrolle(), klickt()" class="form-container" required>
+                   <b> Gruppenname </b> <input type="text" name="gname" placeholder="Gruppenname" class="fett">
+                   <b> Mitglieder </b> <input type="text" name="gmitglied" placeholder="Gruppenmitglied, Gruppenmitglied">
+                   <input type="submit"  value="Neue Gruppe erstellen" class="btn neu" name="gruppe">
+                 </form>
+ </body>
+</html>
