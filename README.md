@@ -35,3 +35,7 @@ https://archive.apache.org/dist/httpd/binaries/win32/httpd-2.2.25-win32-x86-no_s
 https://www.python.org/ftp/python/2.5/python-2.5.msi
 https://archive.apache.org/dist/httpd/modpython/win/3.3.1/mod_python-3.3.1.win32-py2.5-Apache2.2.exe
 https://www.python.org/ftp/python/3.7.8/python-3.7.8-amd64.exe
+
+
+All information that can be found in this repository was created in collaboration with and is property of the Wilhelm von Siemens Gymnasium. 
+If you are willing to take commercial use of this data please turn to the Wilhelm von Siemens Gymnasium.
